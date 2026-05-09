@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, location }) => {
   return (
     <div>
       {movie.title}
-      <NavLink to={`movies/${movie.id}`}>details</NavLink>
+      <NavLink to={`/movies/${movie.id}`} state={location}>
+        details
+      </NavLink>
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { fethMovie } from "../../services/api";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
@@ -9,6 +9,9 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
+  const location = useLocation();
+  console.log(location);
+  const backLinkHref = useRef(location.state ?? "/movies");
   useEffect(() => {
     async function getMovie() {
       try {
@@ -17,7 +20,7 @@ const MovieDetailsPage = () => {
         setError(false);
         const result = await fethMovie(movieId);
         setMovie(result);
-        console.log(result);
+        // console.log(result);
       } catch {
         setError(true);
       } finally {
@@ -28,6 +31,7 @@ const MovieDetailsPage = () => {
   }, []);
   return (
     <div>
+      <NavLink to={backLinkHref.current}>back</NavLink>
       {loader && <Loader />}
       {movie && <p>{movie.title}</p>}
       {error && <ErrorMessage />}
