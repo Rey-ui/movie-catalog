@@ -4,6 +4,9 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import TimeIntervalBar from "../../components/TimeIntervalBar/TimeIntervalBar";
+import SortBar from "../../components/SortBar/SortBar";
+import LoadMore from "../../components/LoadMore/LoadMore";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const HomePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -11,10 +14,12 @@ const HomePage = () => {
   const [error, setError] = useState(false);
   const [timeInterval, setTimeInterval] = useState("day");
   const [showLoadMore, setShowLoadMore] = useState(false);
+  const [sortByAlphabet, setSortByAlphabet] = useState("");
   const [page, setPage] = useState(1);
   const changeTimeInterval = (value) => {
     setTrendingMovies([]);
     setPage(1);
+    setSortByAlphabet("");
     setTimeInterval(value);
   };
 
@@ -51,24 +56,39 @@ const HomePage = () => {
   const handleLoadMore = () => {
     setPage(page + 1);
   };
-  return (
-    <div>
-      <TimeIntervalBar value={timeInterval} change={changeTimeInterval} />
+  const sortedMovies = [...trendingMovies].sort((a, b) => {
+    if (sortByAlphabet === "az") {
+      return a.title.localeCompare(b.title);
+    }
 
-      {trendingMovies.length !== 0 ? (
-        <MoviesList movies={trendingMovies} />
-      ) : (
-        <p>Nothing found</p>
-      )}
-      {error && <ErrorMessage />}
-      {trendingMovies.length !== 0 && showLoadMore && (
-        <button type="button" onClick={handleLoadMore}>
-          loadMore
-        </button>
-      )}
-      {loader && <Loader />}
-    </div>
+    if (sortByAlphabet === "za") {
+      return b.title.localeCompare(a.title);
+    }
+
+    return 0;
+  });
+  return (
+    <main>
+      <div className="container">
+        <PageTitle>Find Your Next Favorite Film</PageTitle>
+        <div>
+          <TimeIntervalBar value={timeInterval} change={changeTimeInterval} />
+          <SortBar value={sortByAlphabet} change={setSortByAlphabet} />
+        </div>
+        <div>
+          {trendingMovies.length !== 0 ? (
+            <MoviesList movies={sortedMovies} />
+          ) : (
+            <p>Nothing found</p>
+          )}
+          {error && <ErrorMessage />}
+          {loader && <Loader />}
+          {trendingMovies.length !== 0 && showLoadMore && (
+            <LoadMore handleLoadMore={handleLoadMore} />
+          )}
+        </div>
+      </div>
+    </main>
   );
 };
-// ! баг с дублированием элементов при первом рендере
 export default HomePage;

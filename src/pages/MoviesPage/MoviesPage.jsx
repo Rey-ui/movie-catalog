@@ -4,23 +4,28 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loader from "../../components/Loader/Loader";
 import { fethMoviesByQuery, fethTrendingMovies } from "../../services/api";
 import SearchForm from "../../components/SearchForm/SearchForm";
+import { useSearchParams } from "react-router-dom";
+import SortBar from "../../components/SortBar/SortBar";
+import toast, { Toaster } from "react-hot-toast";
 
 const MoviesPage = () => {
   const [articles, setArticles] = useState([]);
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
-  const [query, setQuery] = useState("");
-
+  const [query, setQuery] = useSearchParams();
+  const [sortByAlphabet, setSortByAlphabet] = useState("");
+  const title = query.get("query") ?? "";
   useEffect(() => {
-    if (!query) return;
+    if (!title) return;
     async function getMoviesByQuery() {
       try {
         setLoader(true);
         setError(false);
-
-        const { results } = await fethMoviesByQuery(query);
+        setArticles([]);
+        const { results } = await fethMoviesByQuery(title);
         if (results.length === 0) {
-          console.log("nothing found");
+          setQuery({});
+          toast.error("Nothing found");
           return;
         }
         console.log(results);
@@ -32,16 +37,18 @@ const MoviesPage = () => {
       }
     }
     getMoviesByQuery();
-  }, [query]);
+  }, [title]);
   useEffect(() => {
+    if (title) return;
     const controller = new AbortController();
     async function getMovies() {
       try {
         setLoader(true);
         setError(false);
+        setArticles([]);
         const { results } = await fethTrendingMovies(controller);
         if (results.length === 0) {
-          console.log("nothing found");
+          toast.error("Nothing found");
           return;
         }
         console.log(results);
@@ -58,21 +65,33 @@ const MoviesPage = () => {
     return () => {
       controller.abort();
     };
-  }, []);
-  const handleSubmit = (value) => {
-    setQuery(value);
+  }, [title]);
+  const handleSubmit = (key, value) => {
+    const updatedParams = new URLSearchParams(query);
+    updatedParams.set(key, value);
+    setQuery(updatedParams);
+    setSortByAlphabet("");
   };
+  const handleSort = [...articles].sort((a, b) => {
+    if (sortByAlphabet === "az") {
+      return a.title.localeCompare(b.title);
+    }
+
+    if (sortByAlphabet === "za") {
+      return b.title.localeCompare(a.title);
+    }
+
+    return 0;
+  });
   return (
-    <div>
+    <main>
       <SearchForm submit={handleSubmit} />
-      {articles.length !== 0 ? (
-        <MoviesList movies={articles} />
-      ) : (
-        <p>Nothing found</p>
-      )}
-      {error && <ErrorMessage />}
+      <SortBar value={sortByAlphabet} change={setSortByAlphabet} />
       {loader && <Loader />}
-    </div>
+      {articles.length !== 0 && <MoviesList movies={handleSort} />}
+      {error && <ErrorMessage />}
+      <Toaster position="top-center" reverseOrder={false} />
+    </main>
   );
 };
 
