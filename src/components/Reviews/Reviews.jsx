@@ -3,7 +3,8 @@ import { fethReviews } from "../../services/api";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
-
+import { FaUserNinja } from "react-icons/fa";
+import css from "./Reviews.module.css";
 const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
@@ -26,14 +27,30 @@ const Reviews = () => {
     getMovieReviews();
   }, []);
   return (
-    <div>
+    <div className={css.reviewsContainer}>
       {loader && <Loader />}
       {reviews.length > 0 ? (
-        <div>
+        <ul className={css.reviewsList}>
           {reviews.map((user) => {
-            return <p>{user.author}</p>;
+            return (
+              <li className={css.reviewsItem}>
+                <div className={css.reviewsItemInfo}>
+                  <div className={css.reviewsUser}>
+                    <div className={css.reviewsUserSvgContainer}>
+                      <FaUserNinja className={css.reviewsUserAvatar} />
+                    </div>
+
+                    <h4 className={css.reviewsUserName}>{user.author}</h4>
+                  </div>
+                  <span className={css.reviewsUserTime}>
+                    {new Date(user.created_at).toLocaleDateString()}
+                  </span>
+                </div>
+                <p className={css.reviewsText}>{user.content}</p>
+              </li>
+            );
           })}
-        </div>
+        </ul>
       ) : (
         <div>no rewievs</div>
       )}

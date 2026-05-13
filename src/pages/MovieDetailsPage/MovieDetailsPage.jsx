@@ -3,7 +3,10 @@ import { fethMovie } from "../../services/api";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-
+import MovieDetailsBar from "../../components/MovieDetailsBar/MovieDetailsBar";
+import MovieDetailsCard from "../../components/MovieDetailsCard/MovieDetailsCard";
+import { IoArrowBackOutline } from "react-icons/io5";
+import css from "./MovieDetailsPage.module.css";
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
@@ -20,7 +23,7 @@ const MovieDetailsPage = () => {
         setError(false);
         const result = await fethMovie(movieId);
         setMovie(result);
-        // console.log(result);
+        console.log(result);
       } catch {
         setError(true);
       } finally {
@@ -30,25 +33,28 @@ const MovieDetailsPage = () => {
     getMovie();
   }, []);
   return (
-    <div>
-      <NavLink to={backLinkHref.current}>back</NavLink>
-      {loader && <Loader />}
-      {movie && <p>{movie.title}</p>}
-      {error && <ErrorMessage />}
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="cast">cast</NavLink>
-          </li>
-          <li>
-            <NavLink to="reviews">reviews</NavLink>
-          </li>
-        </ul>
-      </nav>
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense>
-    </div>
+    <main>
+      <div className="container">
+        <NavLink className={css.backBtn} to={backLinkHref.current}>
+          <IoArrowBackOutline className={css.backBtnSvg} />
+          <span className={css.backBtnText}>Back</span>
+        </NavLink>
+        <div>
+          {loader && <Loader />}
+          {movie && (
+            <div className={css.movieDetailsCont}>
+              <MovieDetailsCard movie={movie} />
+              <MovieDetailsBar />
+            </div>
+          )}
+
+          {error && <ErrorMessage />}
+        </div>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </div>
+    </main>
   );
 };
 

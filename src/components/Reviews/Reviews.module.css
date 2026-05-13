@@ -1,0 +1,65 @@
+.reviewsContainer {
+}
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 25px;
+}
+.reviewsItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--text-general);
+  padding: 20px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  gap: 20px;
+  transition: all 250ms;
+}
+.reviewsItem:hover {
+  background-color: #291b1b;
+}
+.reviewsItemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.reviewsUser {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.reviewsUserSvgContainer {
+  padding: 10px;
+  border-radius: 100px;
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviewsUserAvatar {
+  width: 25px;
+  height: 25px;
+  fill: var(--accent);
+}
+.reviewsUserName {
+  font-size: 18px;
+  color: var(--text-primary);
+}
+.reviewsUserTime {
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+  padding: 4px 8px;
+  margin: 0;
+  display: block;
+  border-radius: 20px;
+  background-color: var(--bg-secondary);
+}
+.reviewsText {
+  color: var(--text-secondary);
+  font-size: var(--text-general);
+}

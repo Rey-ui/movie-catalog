@@ -7,7 +7,8 @@ import SearchForm from "../../components/SearchForm/SearchForm";
 import { useSearchParams } from "react-router-dom";
 import SortBar from "../../components/SortBar/SortBar";
 import toast, { Toaster } from "react-hot-toast";
-
+import PageTitle from "../../components/PageTitle/PageTitle";
+import css from "./MoviesPage.module.css";
 const MoviesPage = () => {
   const [articles, setArticles] = useState([]);
   const [loader, setLoader] = useState(false);
@@ -85,12 +86,17 @@ const MoviesPage = () => {
   });
   return (
     <main>
-      <SearchForm submit={handleSubmit} />
-      <SortBar value={sortByAlphabet} change={setSortByAlphabet} />
-      {loader && <Loader />}
-      {articles.length !== 0 && <MoviesList movies={handleSort} />}
-      {error && <ErrorMessage />}
-      <Toaster position="top-center" reverseOrder={false} />
+      <div className="container">
+        <PageTitle>Explore Movies</PageTitle>
+        <div className={css.SearchContainer}>
+          <SearchForm submit={handleSubmit} />
+          <SortBar value={sortByAlphabet} change={setSortByAlphabet} />
+        </div>
+        {loader && <Loader />}
+        {articles.length !== 0 && <MoviesList movies={handleSort} />}
+        {error && <ErrorMessage />}
+        <Toaster position="top-center" reverseOrder={false} />
+      </div>
     </main>
   );
 };

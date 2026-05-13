@@ -7,7 +7,7 @@ import TimeIntervalBar from "../../components/TimeIntervalBar/TimeIntervalBar";
 import SortBar from "../../components/SortBar/SortBar";
 import LoadMore from "../../components/LoadMore/LoadMore";
 import PageTitle from "../../components/PageTitle/PageTitle";
-
+import css from "./HomePage.module.css";
 const HomePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [loader, setLoader] = useState(false);
@@ -71,21 +71,21 @@ const HomePage = () => {
     <main>
       <div className="container">
         <PageTitle>Find Your Next Favorite Film</PageTitle>
-        <div>
+        <div className={css.homeSelects}>
           <TimeIntervalBar value={timeInterval} change={changeTimeInterval} />
           <SortBar value={sortByAlphabet} change={setSortByAlphabet} />
         </div>
-        <div>
+        <div className={css.homeContent}>
           {trendingMovies.length !== 0 ? (
             <MoviesList movies={sortedMovies} />
           ) : (
             <p>Nothing found</p>
           )}
-          {error && <ErrorMessage />}
-          {loader && <Loader />}
           {trendingMovies.length !== 0 && showLoadMore && (
             <LoadMore handleLoadMore={handleLoadMore} />
           )}
+          {loader && <Loader />}
+          {error && <ErrorMessage />}
         </div>
       </div>
     </main>

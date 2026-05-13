@@ -1,0 +1,26 @@
+.movieCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 260px;
+  transition: all 250ms;
+}
+.movieCardImg {
+  display: block;
+  margin: 0;
+  height: 350px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.movieCardTitle {
+  font-size: var(--title-h3-desk);
+  font-weight: 600px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+.movieCard:hover,
+.movieCard:focus {
+  transform: scale(1.03);
+}

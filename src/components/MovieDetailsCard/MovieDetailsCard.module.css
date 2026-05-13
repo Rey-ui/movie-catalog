@@ -1,0 +1,89 @@
+.movieDetailsCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+.movieDetailsCardImg {
+  border-radius: var(--radius);
+  display: block;
+  margin: 0;
+  object-fit: cover;
+}
+.detailsCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+.detailsCardUp {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.detailsCardTitle {
+  font-size: var(--title-h1-desk);
+  font-weight: 600;
+}
+.detailsCardMainInfo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.detailsCardMainInfoArticle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.detailsCardMainInfoTitle {
+  font-weight: 600;
+  font-size: var(--text-general);
+}
+.detailsCardMainInfoList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 6px;
+}
+.detailsCardMainInfoText {
+  color: var(--accent);
+  font-size: var(--text-general);
+  margin: 0;
+  display: block;
+  border-radius: 20px;
+  padding: 4px 14px;
+  background-color: var(--bg-card);
+}
+.detailsCardBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.detailsCardDescriptionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.detailsCardDescriptionTitle {
+  font-size: var(--title-h3-desk);
+}
+.detailsCardDescriptionList {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.detailsCardDescriptionItem {
+  color: var(--text-secondary);
+  font-size: var(--text-general);
+  margin: 0;
+  border-radius: 20px;
+  padding: 6px 14px;
+  background-color: var(--bg-card);
+}
+.detailsCardDescriptionOverview {
+  color: var(--text-secondary);
+  font-size: var(--text-general);
+  padding-bottom: 50px;
+  border-bottom: 0.5px solid var(--text-muted);
+}

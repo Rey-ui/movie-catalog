@@ -1,0 +1,35 @@
+.selectContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.selectSvg {
+  width: 25px;
+  height: 25px;
+  stroke: var(--text-secondary);
+}
+.selectSort {
+  appearance: none;
+  color: var(--text-primary);
+  border: 1px solid #2a2a2a;
+  border-radius: var(--radius);
+  background-color: var(--bg-secondary);
+  padding: 8px 32px 8px 12px;
+  font-size: var(--text-general);
+  cursor: pointer;
+  transition: border-color 0.2s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+.sortOption {
+}
+
+.selectSort:hover {
+  border-color: var(--accent);
+}
+
+.selectSort:focus {
+  outline: none;
+  border-color: var(--accent-hover);
+}

@@ -1,0 +1,5 @@
+.title {
+  padding: 50px 0 40px 0;
+  font-size: var(--title-h1-desk);
+  font-weight: 700;
+}

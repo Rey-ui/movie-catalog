@@ -3,8 +3,10 @@ import { ClipLoader } from "react-spinners";
 const Loader = () => {
   return (
     <ClipLoader
-      color="green"
-      size={50}
+      color="#e50914"
+      position="absolute"
+      size={60}
+      display="flex"
       aria-label="Loading Spinner"
       data-testid="loader"
     />

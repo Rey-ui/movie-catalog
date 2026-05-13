@@ -1,0 +1,40 @@
+.backBtn {
+  color: #999999;
+  padding: 16px 34px;
+  border-radius: var(--radius);
+  background-color: var(--bg-secondary);
+  text-align: center;
+  transition: all 250ms;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+.backBtnSvg {
+  width: 25px;
+  height: 25px;
+  stroke: var(--text-secondary);
+  transition: all 250ms;
+}
+.backBtnText {
+  color: #999999;
+  font-size: var(--text-general);
+  transition: all 250ms;
+}
+.backBtn:hover {
+  background-color: #291b1b;
+}
+.backBtn:hover .backBtnText {
+  color: var(--accent-hover);
+  background-color: #291b1b;
+}
+.backBtn:hover .backBtnSvg {
+  stroke: var(--accent-hover);
+}
+/* .movieDetailsCont {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+} */
