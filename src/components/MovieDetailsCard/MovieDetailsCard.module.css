@@ -40,11 +40,13 @@
 .detailsCardMainInfoTitle {
   font-weight: 600;
   font-size: var(--text-general);
+  white-space: nowrap;
 }
 .detailsCardMainInfoList {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   margin: 0;
   gap: 6px;
 }
@@ -73,6 +75,7 @@
 .detailsCardDescriptionList {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .detailsCardDescriptionItem {
