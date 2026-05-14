@@ -3,24 +3,54 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 15px;
-  max-width: 260px;
+  gap: 10px;
+  max-width: 150px;
   transition: all 250ms;
 }
 .movieCardImg {
   display: block;
   margin: 0;
-  height: 350px;
+  height: 200px;
   object-fit: cover;
   border-radius: var(--radius);
 }
 .movieCardTitle {
-  font-size: var(--title-h3-desk);
+  font-size: var(--title-h3-mob);
   font-weight: 600px;
   color: var(--text-secondary);
   text-align: center;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .movieCard:hover,
 .movieCard:focus {
   transform: scale(1.03);
 }
+/* ================================ */
+@media screen and (min-width: 768px) {
+  .movieCard {
+    gap: 12px;
+    max-width: 200px;
+  }
+  .movieCardImg {
+    height: 250px;
+  }
+  .movieCardTitle {
+    font-size: var(--title-h3-tab);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .movieCard {
+    gap: 15px;
+    max-width: 260px;
+  }
+  .movieCardImg {
+    height: 350px;
+  }
+  .movieCardTitle {
+    font-size: var(--title-h3-desk);
+  }
+}
+/* ================================ */

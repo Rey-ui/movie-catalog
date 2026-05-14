@@ -1,7 +1,7 @@
 .homeSelects {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 .homeContent {
@@ -10,3 +10,19 @@
   align-items: center;
   gap: 20px;
 }
+/* ================================ */
+@media screen and (min-width: 768px) {
+  .homeSelects {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .homeContent {
+    gap: 20px;
+  }
+}
+/* ================================ */

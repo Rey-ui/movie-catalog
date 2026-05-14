@@ -1,11 +1,11 @@
 .castContainer {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .castList {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: flex-start;
-  gap: 25px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 .castItem {
@@ -13,27 +13,76 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 12px;
-  max-width: 150px;
+  gap: 8px;
+  max-width: 130px;
 }
 .castImg {
-  height: 200px;
+  height: 150px;
   border-radius: var(--radius);
   object-fit: cover;
   margin: 0;
   display: block;
 }
 .castSvgCont {
-  padding: 75px 41px;
+  padding: 60px 41px;
   background-color: var(--bg-card);
   border-radius: var(--radius);
 }
 .castSvg {
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   fill: var(--accent);
 }
 .castName {
   font-size: var(--text-general);
   color: var(--text-secondary);
 }
+/* ================================ */
+@media screen and (min-width: 768px) {
+  .castContainer {
+    margin-bottom: 30px;
+  }
+  .castList {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  .castItem {
+    gap: 10px;
+    max-width: 140px;
+  }
+  .castImg {
+    height: 200px;
+  }
+  .castSvgCont {
+    padding: 75px 41px;
+  }
+  .castSvg {
+    width: 45px;
+    height: 45px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .castContainer {
+    margin-bottom: 50px;
+  }
+  .castList {
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 25px;
+  }
+  .castItem {
+    gap: 12px;
+    max-width: 150px;
+  }
+  .castImg {
+    height: 200px;
+  }
+  .castSvgCont {
+    padding: 72px 41px;
+  }
+  .castSvg {
+    width: 50px;
+    height: 50px;
+  }
+}
+/* ================================ */

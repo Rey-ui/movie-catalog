@@ -1,22 +1,22 @@
 .detailsNav {
-  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 .detailsNavList {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 .detailsNavLink {
 }
 a.detailsNavLink {
   color: #999999;
-  padding: 16px 34px;
+  padding: 14px 28px;
   border-radius: var(--radius);
   background-color: var(--bg-secondary);
   /* max-width: 125px; */
   text-align: center;
-  font-size: 18px;
-  width: 125px;
+  font-size: 16px;
+  width: 130px;
   transition: all 250ms;
 }
 a.detailsNavLink:hover {
@@ -26,3 +26,20 @@ a.detailsNavLink:hover {
 a.active {
   color: var(--accent);
 }
+/* ================================ */
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1280px) {
+  .detailsNav {
+    padding-bottom: 30px;
+  }
+  .detailsNavList {
+    gap: 30px;
+  }
+  a.detailsNavLink {
+    padding: 16px 34px;
+    font-size: 18px;
+    width: 145px;
+  }
+}
+/* ================================ */

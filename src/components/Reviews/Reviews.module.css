@@ -5,18 +5,18 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 25px;
+  gap: 20px;
 }
 .reviewsItem {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  font-size: var(--text-general);
-  padding: 20px;
+  font-size: var(--text-small);
+  padding: 15px;
   background-color: var(--bg-card);
   border-radius: var(--radius);
-  gap: 20px;
+  gap: 15px;
   transition: all 250ms;
 }
 .reviewsItem:hover {
@@ -25,12 +25,12 @@
 .reviewsItemInfo {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 .reviewsUser {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 .reviewsUserSvgContainer {
   padding: 10px;
@@ -47,7 +47,7 @@
   fill: var(--accent);
 }
 .reviewsUserName {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--text-primary);
 }
 .reviewsUserTime {
@@ -61,5 +61,33 @@
 }
 .reviewsText {
   color: var(--text-secondary);
-  font-size: var(--text-general);
+  font-size: var(--text-small);
 }
+/* ================================ */
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1280px) {
+  .reviewsList {
+    gap: 25px;
+  }
+  .reviewsItem {
+    font-size: var(--text-general);
+    padding: 20px;
+    gap: 20px;
+  }
+  .reviewsItemInfo {
+    gap: 15px;
+  }
+  .reviewsUser {
+    gap: 12px;
+  }
+
+  .reviewsUserName {
+    font-size: 18px;
+  }
+
+  .reviewsText {
+    font-size: var(--text-general);
+  }
+}
+/* ================================ */

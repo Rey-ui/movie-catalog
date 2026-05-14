@@ -1,24 +1,26 @@
 .header {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 .headerContainer {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 30px;
+  gap: 15px;
+  padding: 25px;
   border-bottom: 0.5px solid var(--text-muted);
 }
 .headerLogo {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 .headerLogoText {
-  font-size: var(--title-h2-desk);
+  font-size: var(--title-h2-mob);
 }
 .headerLogoSvg {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   fill: var(--accent);
 }
 .headerNav {
@@ -26,18 +28,18 @@
 .headerList {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 35px;
 }
 .headerItem {
 }
 a.headerLink {
   color: #999999;
-  padding: 16px 34px;
+  padding: 12px 24px;
   border-radius: var(--radius);
   background-color: var(--bg-secondary);
   /* max-width: 125px; */
   text-align: center;
-  width: 125px;
+  width: 100px;
   transition: all 250ms;
 }
 a.headerLink:hover {
@@ -47,3 +49,58 @@ a.headerLink:hover {
 a.active {
   color: var(--accent);
 }
+/* ================================ */
+@media screen and (min-width: 768px) {
+  .header {
+    margin-bottom: 30px;
+  }
+  .headerContainer {
+    flex-direction: row;
+    gap: auto;
+    padding: 30px;
+  }
+
+  .headerLogoText {
+    font-size: var(--title-h2-tab);
+  }
+  .headerLogoSvg {
+    width: 25px;
+    height: 25px;
+  }
+  .headerList {
+    gap: 30px;
+  }
+  a.headerLink {
+    color: #999999;
+    padding: 14px 28px;
+    width: 120px;
+  }
+  a.headerLink:hover {
+    color: var(--accent-hover);
+    background-color: #291b1b;
+  }
+  a.active {
+    color: var(--accent);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .headerLogo {
+    gap: 15px;
+  }
+  .headerLogoText {
+    font-size: var(--title-h2-desk);
+  }
+
+  a.headerLink {
+    padding: 16px 34px;
+    width: 125px;
+  }
+  a.headerLink:hover {
+    color: var(--accent-hover);
+    background-color: #291b1b;
+  }
+  a.active {
+    color: var(--accent);
+  }
+}
+/* ================================ */

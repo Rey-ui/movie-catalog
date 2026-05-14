@@ -10,12 +10,12 @@ const MovieDetailsBar = () => {
       <ul className={css.detailsNavList}>
         <li className={css.detailsNavItem}>
           <NavLink className={buildLinkClass} to="cast">
-            cast
+            Cast
           </NavLink>
         </li>
         <li>
           <NavLink className={buildLinkClass} to="reviews">
-            reviews
+            Reviews
           </NavLink>
         </li>
       </ul>

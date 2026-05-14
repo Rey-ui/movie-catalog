@@ -1,34 +1,36 @@
 .movieDetailsCard {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  gap: 50px;
-  margin-bottom: 40px;
+  gap: 30px;
+  margin-bottom: 35px;
 }
 .movieDetailsCardImg {
   border-radius: var(--radius);
   display: block;
   margin: 0;
   object-fit: cover;
+  max-width: 350px;
 }
 .detailsCardContent {
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 35px;
 }
 .detailsCardUp {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 .detailsCardTitle {
-  font-size: var(--title-h1-desk);
+  font-size: var(--title-h1-mob);
   font-weight: 600;
 }
 .detailsCardMainInfo {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
 }
 .detailsCardMainInfoArticle {
   display: flex;
@@ -48,42 +50,132 @@
 }
 .detailsCardMainInfoText {
   color: var(--accent);
-  font-size: var(--text-general);
+  font-size: var(--text-small);
   margin: 0;
   display: block;
   border-radius: 20px;
-  padding: 4px 14px;
+  padding: 4px 10px;
   background-color: var(--bg-card);
 }
 .detailsCardBottom {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 .detailsCardDescriptionInfo {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 .detailsCardDescriptionTitle {
-  font-size: var(--title-h3-desk);
+  font-size: var(--title-h3-mob);
 }
 .detailsCardDescriptionList {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 .detailsCardDescriptionItem {
   color: var(--text-secondary);
-  font-size: var(--text-general);
+  font-size: var(--text-small);
   margin: 0;
   border-radius: 20px;
-  padding: 6px 14px;
+  padding: 6px 10px;
   background-color: var(--bg-card);
 }
 .detailsCardDescriptionOverview {
   color: var(--text-secondary);
-  font-size: var(--text-general);
-  padding-bottom: 50px;
+  font-size: var(--text-small);
+  padding-bottom: 30px;
   border-bottom: 0.5px solid var(--text-muted);
 }
+/* ================================ */
+@media screen and (min-width: 768px) {
+  .movieDetailsCard {
+    gap: 35px;
+    margin-bottom: 40px;
+  }
+  .movieDetailsCardImg {
+    max-width: 450px;
+  }
+  .detailsCardContent {
+    gap: 40px;
+  }
+  .detailsCardUp {
+    gap: 12px;
+  }
+  .detailsCardTitle {
+    font-size: var(--title-h1-tab);
+  }
+
+  .detailsCardMainInfoText {
+    font-size: var(--text-general);
+    padding: 6px 12px;
+  }
+  .detailsCardBottom {
+    gap: 25px;
+  }
+  .detailsCardDescriptionInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .detailsCardDescriptionTitle {
+    font-size: var(--title-h3-tab);
+  }
+  .detailsCardDescriptionList {
+    gap: 12px;
+  }
+  .detailsCardDescriptionItem {
+    font-size: var(--text-general);
+
+    padding: 6px 12px;
+  }
+  .detailsCardDescriptionOverview {
+    font-size: var(--text-general);
+    padding-bottom: 35px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .movieDetailsCard {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 50px;
+    margin-bottom: 40px;
+  }
+  .movieDetailsCardImg {
+    max-width: 600px;
+  }
+  .detailsCardContent {
+    gap: 45px;
+  }
+  .detailsCardUp {
+    gap: 15px;
+  }
+  .detailsCardTitle {
+    font-size: var(--title-h1-desk);
+  }
+  .detailsCardMainInfo {
+    gap: 25px;
+  }
+
+  .detailsCardMainInfoText {
+    padding: 4px 14px;
+  }
+  .detailsCardBottom {
+    gap: 30px;
+  }
+  .detailsCardDescriptionTitle {
+    font-size: var(--title-h3-desk);
+  }
+  .detailsCardDescriptionList {
+    gap: 12px;
+  }
+  .detailsCardDescriptionItem {
+    padding: 6px 14px;
+  }
+  .detailsCardDescriptionOverview {
+    padding-bottom: 50px;
+  }
+}
+/* ================================ */

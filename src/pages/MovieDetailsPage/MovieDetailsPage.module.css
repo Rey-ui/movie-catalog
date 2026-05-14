@@ -1,19 +1,19 @@
 .backBtn {
   color: #999999;
-  padding: 16px 34px;
+  padding: 12px 24px;
   border-radius: var(--radius);
   background-color: var(--bg-secondary);
   text-align: center;
   transition: all 250ms;
-  max-width: 150px;
+  max-width: 120px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
   margin-bottom: 30px;
 }
 .backBtnSvg {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   stroke: var(--text-secondary);
   transition: all 250ms;
 }
@@ -32,9 +32,33 @@
 .backBtn:hover .backBtnSvg {
   stroke: var(--accent-hover);
 }
-/* .movieDetailsCont {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 40px;
-} */
+.movieDetailsCont {
+  /* display: none; */
+}
+/* ================================ */
+@media screen and (min-width: 768px) {
+  .backBtn {
+    padding: 14px 26px;
+    max-width: 140px;
+    gap: 12px;
+  }
+  .backBtnSvg {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .backBtn {
+    padding: 16px 34px;
+    max-width: 150px;
+    gap: 15px;
+  }
+  .backBtnSvg {
+    width: 25px;
+    height: 25px;
+  }
+  .backBtnText {
+    font-size: var(--text-big);
+  }
+}
+/* ================================ */
