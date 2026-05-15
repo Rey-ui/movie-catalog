@@ -2,8 +2,7 @@ import axios from "axios";
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 const options = {
   headers: {
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MDlmMWQ5YzUwODExYTAyM2ZlODNlYzNmMjc0MTdkOSIsInN1YiI6IjY1ZmVjYTA0MDQ3MzNmMDE3ZGVjOGQ3NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.tgymQKaHGxjCiVowtdo-t4DT1DQrhgqs9biItBT-NRA",
+    Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
   },
 };
 async function fethTrendingMovies(controller, interval = "day", page = 1) {
