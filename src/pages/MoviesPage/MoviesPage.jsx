@@ -52,7 +52,6 @@ const MoviesPage = () => {
           toast.error("Nothing found");
           return;
         }
-        console.log(results);
         setArticles(results);
       } catch (err) {
         if (err.code !== "ERR_CANCELED") {

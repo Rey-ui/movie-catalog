@@ -23,14 +23,10 @@
   height: 20px;
   fill: var(--accent);
 }
-.headerNav {
-}
 .headerList {
   display: flex;
   align-items: center;
   gap: 35px;
-}
-.headerItem {
 }
 a.headerLink {
   color: #999999;

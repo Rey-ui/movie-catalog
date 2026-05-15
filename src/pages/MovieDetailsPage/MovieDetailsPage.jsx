@@ -23,7 +23,6 @@ const MovieDetailsPage = () => {
         setError(false);
         const result = await fethMovie(movieId);
         setMovie(result);
-        console.log(result);
       } catch {
         setError(true);
       } finally {

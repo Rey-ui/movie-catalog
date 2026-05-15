@@ -6,8 +6,6 @@
   align-items: center;
   gap: 20px;
 }
-.detailsNavLink {
-}
 a.detailsNavLink {
   color: #999999;
   padding: 14px 28px;
@@ -25,9 +23,6 @@ a.detailsNavLink:hover {
 }
 a.active {
   color: var(--accent);
-}
-/* ================================ */
-@media screen and (min-width: 768px) {
 }
 @media screen and (min-width: 1280px) {
   .detailsNav {
