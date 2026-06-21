@@ -13,7 +13,6 @@ const MovieDetailsPage = () => {
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
   const location = useLocation();
-  console.log(location);
   const backLinkHref = useRef(location.state ?? "/movies");
   useEffect(() => {
     async function getMovie() {

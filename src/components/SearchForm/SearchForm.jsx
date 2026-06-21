@@ -18,7 +18,6 @@ const SearchForm = ({ submit }) => {
   };
   const onSubmit = (values, actions) => {
     submit("query", values.query);
-    //actions.resetForm();
   };
   return (
     <Formik

@@ -1,48 +1,83 @@
-# React + Vite
+# 🎬 Movie Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React application for discovering trending movies, searching by title, and viewing detailed film information using the TMDB API.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-# 🎬 Backstage — Movie Catalog
-
-A modern movie catalog built with React, featuring trending movies, search, and detailed film information.
-
-🔗 [Live Demo](https://movie-catalog-silk.vercel.app/)
+https://movie-catalog-silk.vercel.app/
 
 ## Features
 
-- Trending movies by day or week
+- Browse trending movies
+- Filter trending movies by day or week
 - Search movies by title
-- Detailed movie page with genres, overview, rating, and countries
-- Cast and reviews via nested routes
-- Load more pagination
+- Detailed movie information page
+- Cast and reviews sections using nested routes
+- Pagination for movie collections
 - Alphabetical sorting
-- Fully responsive design
+- Loading and error states
+- Responsive design
+- Fallback images and empty states
 
 ## Tech Stack
 
-- React 18
-- React Router DOM v6
+- React
+- React Router
 - Axios
-- Formik + Yup
+- Formik
+- Yup
 - CSS Modules
 - React Hot Toast
 - React Icons
+- React Spinners
 - Vite
 
-## Getting Started
+## What I Practiced
 
-1. Clone the repository
-2. Create `.env` file with your TMDB token:
+This project was created to strengthen my React fundamentals and routing skills.
+
+Key concepts:
+
+- SPA architecture
+- React Router
+- Dynamic routes
+- Nested routes
+- URL state management
+- API integration
+- Form handling and validation
+- Reusable component architecture
+- Loading and error handling
+
+## Installation
+
+```bash
+git clone https://github.com/Rey-ui/movie-catalog.git
+
+cd movie-catalog
+
+npm install
+
+npm run dev
+```
+
+## Environment Variables
+
+Create a `.env` file and add your TMDB API token.
+
+## 📁 Project Structure
+
+```text
+src/
+ ├── components/
+ ├── pages/
+ ├── services/
+ ├── routes/
+ ├── App.jsx
+ └── main.jsx
+```
+
+## Author
+
+Andrii Trubchaninov
+
+Frontend Developer
